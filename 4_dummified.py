@@ -2,6 +2,7 @@
 
 import numpy as np
 import pandas as pd
+from category_encoders import HashingEncoder
 
 
 df = pd.read_csv('data/na_filled.csv')
@@ -15,5 +16,11 @@ cols_categorical += [
 ]
 
 #drop categorical columns
-df.drop(cols_categorical, axis=1, inplace = True)
-df.to_csv('data/toy_data.csv', index=False)
+#df.drop(cols_categorical, axis=1, inplace = True)
+encoder = HashingEncoder(cols=cols_categorical, n_components=64)
+
+index_y = df.columns.get_loc("sale_price")
+df = encoder.fit_transform(df, dataset.iloc[: , [index_y])
+
+
+df.to_csv('data/output.csv', index=False)
