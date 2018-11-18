@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import pandas as pd
-import sys
 
-#df = pd.read_csv(sys.argv[1])
 
 df = pd.read_csv('data/rows_removed.csv')
 
@@ -45,7 +43,6 @@ print("num columns: %i"%num_cols())
 
 
 #remove features which all entries are of the sames values
-cols = list(df)
 nunique = df.apply(pd.Series.nunique)
 cols_same_value = nunique[nunique == 1].index
 df.drop(cols_same_value, axis=1, inplace = True)
@@ -65,7 +62,4 @@ df = df.dropna(axis='columns', thresh=int(num_row_original * 0.2) )
 print("num columns: %i"%num_cols())
 
 
-
-
-#df.to_csv(sys.argv[2], index=False)
 df.to_csv('data/columns_removed.csv', index=False)
