@@ -1,4 +1,12 @@
 # Data Preprocessing
+
+## to execute
+```
+use python3 to execute the python scripts in this folder one by one by one order by the file name
+```
+
+-----
+
 ## clean rows
 - remove rows with sale_price == 0
 - remove duplicated rows by the key ["block","lot", "address","sale_date", "sale_price"]
