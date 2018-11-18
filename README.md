@@ -10,5 +10,6 @@ This dataset contains the house sales record in Brooklyn, New York City, from 20
 
 ## Progress
 Only the preliminary data-preprocessing was done in the one and half of hackathon
+
 https://github.com/davidwonghk/hackai2018-brooklyn_house/blob/master/pre-processing/README.md
 
